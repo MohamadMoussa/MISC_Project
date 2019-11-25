@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".MapsActivity"
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:umanoDragView="@id/dragview"
+        app:umanoScrollableView="@id/listView"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+    >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+                    android:layout_width="wrap_content"
+                    android:id="@+id/fab"
+
+                    android:backgroundTint="#e3e3e3"
+                    android:onClick="RDV"
+                    app:rippleColor="@color/cardview_dark_background"
+                    app:maxImageSize="150px"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    app:borderWidth="0px"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/img2"
+                    app:layout_anchorGravity="bottom|right|end"
+                    />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/dragview"
+            android:visibility="invisible"
+            android:clickable="true"
+            android:focusable="false"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:id="@+id/relativeText"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16sp"
+                    android:id="@+id/txtDirections"
+                    android:text="Directions"
+                    />
+            </RelativeLayout>
+
+            <ListView
+                android:listSelector="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/listView">
+
+            </ListView>
+
+
+
+        </LinearLayout>
+
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
